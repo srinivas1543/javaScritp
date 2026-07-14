@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Generate OTP</button>
+    <script>
+        console.log(Math.min(6,4,2,7,9,1));
+        console.log(Math.max(6,4,2,7,9,1));
+        console.log(Math.pow(10,5));
+        console.log(Math.round(3.2));
+        console.log(Math.round(3.8));
+        console.log(Math.round(3.5));
+        console.log(Math.floor(3.2));
+        console.log(Math.floor(3.5));
+        console.log(Math.floor(3.8));
+        console.log(Math.ceil(3.3));
+        console.log(Math.ceil(3.5));
+        console.log(Math.ceil(3.8));
+        console.log(Math.trunc(3.3));
+        console.log(Math.trunc(3.5));
+        console.log(Math.trunc(3.8));
+        console.log(Math.random());
+
+        let btn = document.querySelector("button");
+        btn.addEventListener("click",()=>{
+            generateOTP()
+        })
+        function generateOTP(){
+            let otp = Math.floor(Math.random()*10000);
+            if(otp > 999 && otp < 9999){
+                console.log(otp);
+            } 
+            else{
+                generateOTP()
+            }
+        }
+        generateOTP()
+
+
+        
+    </script>
+</body>
+</html>

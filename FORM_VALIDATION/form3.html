@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            position: absolute;
+            left: 80vh;
+            top: 10vh;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="password" name="password" placeholder="Enter password"><br><br>
+        <p style="color: red;"></p>
+        <input type="submit">
+    </form>
+
+
+
+    <script>
+
+        let form = document.forms[0];
+        let input = document.querySelector("input");
+        let p = document.querySelector("p");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();  // prevent form submission
+            // here you can add extra validation if needed
+        });
+
+        input.addEventListener("keyup", () => {
+            let uppercase = /(?=.*[A-Z])/;
+            let lowercase = /(?=.*[a-z])/;
+            let number = /(?=.*[0-9])/;
+            let special = /(?=.[~`!@#$%^&()\-+={}[\]|\\:;"'<>,.?/_])/;
+
+            let password = input.value;
+
+            if (uppercase.test(password) === false) {
+                p.innerText = "It should require atleast 1 uppercase character";
+            }
+            else if(lowercase.test(password) === false){
+                p.innerText = "It should require atleast 1 lowercase character";
+            }
+            else if(number.test(password) === false){
+                p.innerText = "It should require atleast 1 number";
+            }
+            else if(special.test(password) === false){
+                p.innerText = "It should require atleast 1 special character";
+            }
+            else if(password.length < 8){
+                p.innerText = "It should have minimum 8 characters";
+            }
+            else {
+                p.innerText = ""; // valid password
+            }
+        });
+    </script>
+</body>
+</html>

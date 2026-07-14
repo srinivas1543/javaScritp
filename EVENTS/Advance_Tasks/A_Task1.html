@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form action="">
+        <label for="input1">Employee name:</label>
+        <input id="input1" type="text" name="name" placeholder="enter your name"> <br><br>
+        <label for="input2">Employee salary:</label>
+        <input id="input2" type="number" name="salary" placeholder="enter your salary"><br><br>
+        
+        <label for="select">Employee Desigantion</label>
+        <select name="Desigantion" id="select">
+            <option value=""></option>
+            <option id="option1" value="Developer">Developer</option>
+            <option id="option2" value="Test Engineer">Test Engineer</option>
+            <option id="option3" value="Devops Engineer">Devops Engineer</option>
+        </select> <br><br>
+        <button>submit</button>
+        <br><br><br>
+
+   </form>
+
+   <div id="container"></div>
+
+
+    <script>
+        let input1 = document.getElementById('input1');
+        let input2 = document.getElementById('input2');
+        let select = document.querySelector('select');
+        let button1 = document.querySelector('button');
+        let div =document.querySelector('div');
+
+        let table;
+        let tbody;
+
+        button1.addEventListener("click",(e) =>{
+            e.preventDefault();
+
+            //add the table dynamically if table is not exist
+           if(!table){
+             table = document.createElement('table');
+             table.border="1";
+             let thead = document.createElement('thead');
+             tbody = document.createElement('tbody');
+            thead.innerHTML = `
+            <tr> 
+                <th>Name</th>
+                <th>Salary</th>
+                <th>Designation</th>
+            </tr>
+            `
+            table.append(thead);
+            div.append(table);
+        }
+        table.append(tbody);
+        // add the values dynamically
+        let tr = document.createElement('tr');
+
+        tr.innerHTML = `
+            <td>${input1.value}</td>
+            <td>${input2.value}</td>
+            <td>${select.value}</td>
+        `
+        tr.style.cssText = "background-color:black;color :white";
+        tbody.append(tr);
+            input1.value = "";
+            input2.value = "";
+            select.value = "";
+        });
+
+
+    </script>
+</body>
+</html>

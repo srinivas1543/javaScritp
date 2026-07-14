@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .card{
+            border: 3px solid;
+            width: 300px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            background-color: cadetblue;
+            color: white;
+        }
+        .card>button{
+            padding: 10px 80px;
+            font-size: 22px;
+            border: none;
+            background-color: yellow;
+        }
+        .card>button:hover{
+            background-color: blueviolet;
+            color: white;
+        }
+        header{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="" alt="logo">
+        <p>Cart <sup>0</sup></p>
+    </header>
+    <div id="container"></div>
+    <script src="./fetch2.js"></script>
+</body>
+</html>

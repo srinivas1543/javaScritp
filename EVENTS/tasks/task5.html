@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>hide</button>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae excepturi magnam itaque consequatur eius assumenda similique, ea laboriosam? Doloremque, tenetur voluptates! Minus inventore recusandae architecto nihil velit molestiae iste debitis!</p>
+
+
+    <script>
+        let btn = document.querySelector('button');
+        let p = document.querySelector('p');
+        btn.addEventListener("click" ,()=>{
+            if(btn.innerText === "hide"){
+                p.style.display = "none";
+                btn.innerText = "show";
+            }
+            else {
+                p.style.display = "block";
+                btn.innerText = "hide";
+            }
+        });
+    </script>
+    <script src="./task5.js"></script>
+</body>
+</html>

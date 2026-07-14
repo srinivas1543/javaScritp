@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Dark mode</button><button>Light mode</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque placeat cupiditate earum itaque ipsum cumque, a enim voluptas provident expedita maiores facilis distinctio odio, voluptatibus possimus consequuntur, voluptatem hic recusandae!</p>
+    <script>
+        let btn1 = document.querySelectorAll('button')[0];
+        let btn2 = document.querySelectorAll('button')[1];
+        let p = document.querySelector('p');
+
+    btn1.addEventListener("click",() =>{
+        p.style.backgroundColor= "black";
+        p.style.color= "white";
+        document.querySelector('body').style.backgroundColor = "black"
+    });
+    btn2.addEventListener("click",() =>{
+        p.style.color= "black"; 
+        p.style.backgroundColor= "white"; 
+        document.querySelector('body').style.backgroundColor = "white"
+    });
+    </script>
+</body>
+</html>

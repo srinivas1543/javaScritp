@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #head{
+            position: absolute;
+            left: 70vh;
+            top: 26vh;
+        }
+        #btn1{
+            position: absolute;
+            left: 82vh;
+            top: 40vh;
+            padding: 10px 40px;
+        }
+        #btn2{
+            position: absolute;
+            left: 100vh;
+            top: 40vh;
+            padding: 10px 40px;
+        }
+        #minute,#second,#milli{
+            color: white;
+            background-color: black;
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="head"> <b id="minute">0 </b>min : <b id="second">0 </b>sec : <b id="milli">0</b> <b id="millip">ms</b></h1>
+
+    <button id="btn1">start</button><button id="btn2"> stop</button>
+
+
+    <script>
+        let minute = document.getElementById('minute');
+        let second = document.getElementById('second');
+        let milli = document.getElementById('milli');
+        let btn1 = document.getElementById('btn1');
+        let btn2 = document.getElementById('btn2');
+        let num1 = 1;
+        let num2 = 1;
+        let num3 = 1;
+        let x;
+        let y;
+        let z;
+        btn1.addEventListener("click" , (e) =>{
+            x = setInterval(() =>{
+                    milli.innerText = num3++;
+                    if(num3==100){
+                        num3=0;
+                    }
+            },1);
+            y = setInterval(() =>{
+                    second.innerText = num1++;
+                    if(num1==60){
+                        num1=0;
+                    }
+            },1000);
+            z = setInterval(() =>{
+                    minute.innerText = num2++;
+            },60000);
+        });
+
+        btn2.addEventListener("click" ,() =>{
+            clearInterval(x);
+            clearInterval(y);
+            clearInterval(z);
+        });
+    </script>
+</body>
+</html>

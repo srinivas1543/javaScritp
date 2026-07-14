@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+            display: none;
+            color: red;
+            font-size: 14px;
+            position: relative;
+            top: 6px;
+        }
+        form{
+            border: 2px solid black;
+            width: 400px;
+            height: 270px;
+            position: absolute;
+            left: 80vh;
+            top: 10vh;
+            text-align: center;
+            background-color: aqua;
+        }
+        input{
+            padding: 10px 40px;
+            margin-top: 26px;
+        }
+        button{
+            padding: 10px 60px;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input id="usernameInput" type="text" name="username" placeholder="Enter username"><br>
+        <p id="usernameErr">*This field is required..!</p>
+        <input id="passwordInput" type="password" name="password" placeholder="Enter password"><br>
+        <p id="passwordErr">*This field is required..!</p><br><br>
+        <button>submit</button>
+    </form>
+
+    <script>
+         let usernameInput = document.getElementById('usernameInput');
+         let passwordInput = document.getElementById('passwordInput');
+         let usernameErr = document.getElementById('usernameErr');
+         let passwordErr = document.getElementById('passwordErr');
+         let form = document.querySelector('form');
+
+         form.addEventListener("submit", (e) =>{
+            e.preventDefault();
+            let username = usernameInput.value;
+            let password = passwordInput.value;
+            if(username === "" && password === ""){
+                 e.preventDefault();
+                usernameErr.style.cssText = "display : block";
+                passwordErr.style.cssText = "display : block";
+                usernameInput.style.cssText = "border :2px solid red";
+                passwordInput.style.cssText = "border :2px solid red";
+            }
+            else if(username === ""){
+                e.preventDefault();
+                usernameErr.style.cssText = "display : block";
+                usernameInput.style.cssText = "border :2px solid red";
+            }
+            else if(password === ""){
+                e.preventDefault();
+                passwordErr.style.cssText = "display : block";
+                passwordInput.style.cssText = "border :2px solid red";
+            }
+            else{
+                usernameErr.style.cssText = "display : none";
+                passwordErr.style.cssText = "display : none";
+                usernameInput.style.cssText = "border :2px solid black";
+                passwordInput.style.cssText = "border :2px solid black";
+            }
+         })
+         
+    </script>
+</body>
+</html>

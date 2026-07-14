@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h2>Available Balance  :  RS .<b id="amount">0</b></h2>
+        <label for="input1">Enter Amount :</label>
+        <input id="input1" type="number" placeholder="Enter amount"> <br><br>
+
+        <label for="select1">Select  Operation :</label>
+        <select name="Select Operation" id="select1">
+            <option value=""></option>
+            <option value="debit">debit</option>
+            <option value="credit">credit</option>
+        </select><br><br>
+        <button>submit</button>
+
+    <script>
+
+        let amount = document.getElementById('amount');
+        let button1 = document.querySelector('button');
+        let select1 = document.getElementById('select1');
+        button1.addEventListener("click", (e) =>{
+            let amount1 = Number(amount.innerText);
+            let inputAmount = Number(input1.value);
+            if((inputAmount > amount1)&&select1.value === "debit"){
+                alert("Insufficient balance you poor!");
+            }
+            else if(select1.value === "debit"){
+                amount1 = amount1-inputAmount;
+                amount.innerText = amount1;
+                amount1=0;
+            }
+            else if(select1.value === "credit"){
+                amount1 = amount1+inputAmount;
+                amount.innerText = amount1;
+                amount1=0;
+            }
+            select1.value ="";
+            input1.value = "";
+        });
+
+    </script>
+</body>
+</html>

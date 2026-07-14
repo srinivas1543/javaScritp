@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function time(a){
+            setTimeout(() => {
+                console.log(`time is :${a}`);
+            }, a);
+        }
+        async function  name(e) {
+            console.log("start execution");
+            await time(2000);
+            console.log("end execution");
+        }
+        name(2)
+    </script>
+</body>
+</html>

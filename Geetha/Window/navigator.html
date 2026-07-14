@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">click</button>
+    <b></b>
+    <button id="btn2">show location</button>
+    <button id="btn3">display</button>
+    <video src="" controls height="300" width="300"></video>
+
+    <button id="btn4">camera</button>
+    <video src="" controls height="300" width="300"></video>
+
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+        let btn3 = document.getElementById("btn3");
+        let btn4 = document.getElementById("btn4");
+        btn1.addEventListener("click",()=>{
+            let x = navigator.onLine;
+            if(x){
+                document.querySelector("b").innerText = "online"
+            }
+            else{
+                document.querySelector("b").innerText = "offline"
+            }
+        })
+        
+        console.log(navigator.language);
+        btn2.addEventListener("click",()=>{
+                navigator.geolocation.getCurrentPosition((e)=>{
+                console.log(e.coords.latitude);
+                console.log(e.coords.longitude);
+                let url = `https://www.google.co.in/maps/place/${e.coords.latitude},${e.coords.longitude}`
+                window.open(url)
+            })
+        })
+    
+        btn3.addEventListener("click",()=>{
+            navigator.mediaDevices.getDisplayMedia().then(stream=>{
+                document.querySelector("video").srcObject = stream
+            })
+        })
+
+        btn4.addEventListener("click",()=>{
+            navigator.mediaDevices.getUserMedia().then(stream=>{
+                document.querySelectorAll("video")[1].srcObject = stream
+            })
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="fun1()">click</button>
+    <button ondblclick="fun2()">double click</button>
+
+    <img height="200" width="200" onmouseover="newImg()" onmouseout="oldImg()" src="https://cdn.pixabay.com/photo/2025/08/11/07/18/nurturing-swan-9767495_1280.jpg" alt="">
+
+    <p id="para1" onmousedown="newStyle()" onmouseup="oldStyle()">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis, corrupti. Mollitia accusamus, iusto quaerat eaque nulla dolorum nesciunt expedita quisquam, dolores aut quia, suscipit rerum officiis iure culpa explicabo corporis!
+    </p>
+
+    <input type="text" onkeydown="fun3()" placeholder="key down">
+    <input type="text" onkeyup="fun4()" placeholder="key up">
+    <br><br>
+
+    <fieldset>
+        <form action="" onsubmit="submit()">
+            <input type="text" name="username" placeholder="username"><br><br>
+            <input type="password" name="password" placeholder="password"><br><br>
+            
+            <input type="submit">
+        </form>
+    </fieldset>
+        <h1 id="head2">0</h1>
+        <button onclick="change()">increment</button>
+    <script src="./inline1.js"></script>
+</body>
+</html>

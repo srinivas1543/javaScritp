@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <input id="input1" type="text" placeholder="Enter the activity"><button id="button1">Add</button>
+    </div>
+    <ul id="ul1">
+
+    </ul>
+
+
+    <script>
+        let div1 = document.querySelector('#div1');
+        let input1 = document.querySelector('#input1');
+        let button1 = document.querySelector('#button1');
+        let ul1 = document.querySelector('#ul1');
+        button1.addEventListener("click",(e)=>{
+           ul1.innerHTML += `<li id="li1">${input1.value}</li><button id="edit">edit</button><button id="delete1">delete</button>`
+           input1.value = "";
+        })
+
+        let edit = document.querySelector('#edit');
+        let delete1 = document.querySelector('#delete1');
+        let li1 = document.querySelector('#li1');
+
+        edit.addEventListener("click",()=>{
+            input1.value = li1.value;
+        })
+
+    </script>
+</body>
+</html>
